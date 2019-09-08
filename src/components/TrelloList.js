@@ -15,7 +15,7 @@ const TrelloList = ({ title, cards }) => {
     <div style={styles.container}>
       <h4>{title}</h4>
       {cards.map(card => (
-        <TrelloCard text={card.text} />
+        <TrelloCard key={card.id} text={card.text} />
       ))}
     </div>
   );
