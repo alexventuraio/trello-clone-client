@@ -3,36 +3,36 @@ import { CONSTANTS } from '../actions';
 const initialState = [
   {
     title: 'Column One',
-    id: 0,
+    id: `list-${0}`,
     cards: [
       {
-        id: 0,
+        id: `card-${0}`,
         text: 'Card 1',
       },
       {
-        id: 1,
+        id: `card-${1}`,
         text: 'Card 2',
       },
     ],
   },
   {
     title: 'Column Two',
-    id: 1,
+    id: `list-${1}`,
     cards: [
       {
-        id: 0,
+        id: `card-${2}`,
         text: 'Card 1',
       },
       {
-        id: 1,
+        id: `card-${3}`,
         text: 'Card 2',
       },
       {
-        id: 2,
+        id: `card-${4}`,
         text: 'Card 3',
       },
       {
-        id: 3,
+        id: `card-${5}`,
         text: 'Card 4',
       },
     ],
@@ -45,7 +45,7 @@ const listReducer = (state = initialState, action) => {
       const newList = {
         title: action.payload.title,
         cards: [],
-        id: Math.floor(Math.random() * 100 + 1),
+        id: `list-${Math.floor(Math.random() * 100 + 1)}`,
       };
 
       return [...state, newList];
@@ -53,7 +53,7 @@ const listReducer = (state = initialState, action) => {
       const lists = [...state];
       const newCard = {
         text: action.payload.text,
-        id: Math.floor(Math.random() * 100 + 1),
+        id: `card-${Math.floor(Math.random() * 1000 + 1)}`,
       };
 
       //lists[action.payload.listId].cards.push(newCard);
