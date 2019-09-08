@@ -1,12 +1,13 @@
 import { createStore } from 'redux';
-import reducer from './reducers';
+//import reducer from './reducers';
 
-// Definir state inicial
-//const initialState = [];
+// Defining initial state
+const initialState = [];
+const reducer = () => {};
 
 const store = createStore(
   reducer,
-  //initialState,
+  initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
