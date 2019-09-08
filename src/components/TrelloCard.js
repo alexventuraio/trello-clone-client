@@ -1,4 +1,5 @@
 import React from 'react';
+import { Draggable } from 'react-beautiful-dnd';
 
 const styles = {
   card: {
@@ -9,8 +10,20 @@ const styles = {
   },
 };
 
-const TrelloCard = ({ text }) => {
-  return <div style={styles.card}>{text}</div>;
+const TrelloCard = ({ index, id, text }) => {
+  return (
+    <Draggable draggableId={String(id)} index={index}>
+      {provided => (
+        <div
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <div style={styles.card}>{text}</div>
+        </div>
+      )}
+    </Draggable>
+  );
 };
 
 export default TrelloCard;
