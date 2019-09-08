@@ -1,6 +1,6 @@
 const initialState = [
   {
-    title: 'One',
+    title: 'Column One',
     id: 0,
     cards: [
       {
@@ -10,6 +10,28 @@ const initialState = [
       {
         id: 1,
         text: 'Card 2',
+      },
+    ],
+  },
+  {
+    title: 'Column Two',
+    id: 1,
+    cards: [
+      {
+        id: 0,
+        text: 'Card 1',
+      },
+      {
+        id: 1,
+        text: 'Card 2',
+      },
+      {
+        id: 2,
+        text: 'Card 3',
+      },
+      {
+        id: 3,
+        text: 'Card 4',
       },
     ],
   },
