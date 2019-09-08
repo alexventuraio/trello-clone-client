@@ -14,7 +14,12 @@ const App = props => {
       <h2>Hello World</h2>
       <div style={styles.listContainer}>
         {lists.map(list => (
-          <TrelloList key={list.id} title={list.title} cards={list.cards} />
+          <TrelloList
+            key={list.id}
+            listId={list.id}
+            title={list.title}
+            cards={list.cards}
+          />
         ))}
         <TrelloActionButton list />
       </div>
