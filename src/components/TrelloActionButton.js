@@ -87,9 +87,9 @@ class TrelloActionButton extends Component {
           >
             {buttonTitle}
           </button>
-          <icon style={{ marginLeft: 8, cursor: 'pointer', fontSize: 25 }}>
+          <i style={{ marginLeft: 8, cursor: 'pointer', fontSize: 25 }}>
             &times;
-          </icon>
+          </i>
         </div>
       </div>
     );
@@ -109,7 +109,7 @@ class TrelloActionButton extends Component {
 
     return (
       <div onClick={this.openForm} style={localStyles.actionButton}>
-        <icon>+ </icon>
+        <i>+ </i>
         <span>{buttonText}</span>
       </div>
     );
