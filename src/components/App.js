@@ -4,14 +4,27 @@ import { DragDropContext } from 'react-beautiful-dnd';
 
 import TrelloList from './TrelloList';
 import TrelloActionButton from './TrelloActionButton';
+import { sort } from '../actions';
 
 import './App.css';
 
 const App = props => {
   const { lists } = props;
 
-  const onDragEnd = () => {
-    // the only one that is required
+  const onDragEnd = result => {
+    const { destination, source, draggableId } = result;
+
+    if (!destination) return;
+
+    props.dispatch(
+      sort(
+        source.droppableId,
+        destination.droppableId,
+        source.index,
+        destination.index,
+        draggableId
+      )
+    );
   };
 
   return (
