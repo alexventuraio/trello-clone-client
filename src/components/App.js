@@ -1,12 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { DragDropContext } from 'react-beautiful-dnd';
+import styled from 'styled-components';
 
 import TrelloList from './TrelloList';
 import TrelloActionButton from './TrelloActionButton';
 import { sort } from '../actions';
 
 import './App.css';
+
+const ListContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 const App = props => {
   const { lists } = props;
@@ -31,7 +37,7 @@ const App = props => {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="App">
         <h2>Hello World</h2>
-        <div style={styles.listContainer}>
+        <ListContainer>
           {lists.map(list => (
             <TrelloList
               key={list.id}
@@ -41,17 +47,10 @@ const App = props => {
             />
           ))}
           <TrelloActionButton list />
-        </div>
+        </ListContainer>
       </div>
     </DragDropContext>
   );
-};
-
-const styles = {
-  listContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
 };
 
 const mapStateToProps = state => ({

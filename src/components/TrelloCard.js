@@ -1,26 +1,28 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import styled from 'styled-components';
 
-const styles = {
-  card: {
-    backgroundColor: '#fff',
-    border: '1px solid black',
-    borderRadius: 3,
-    margin: '10px',
-  },
-};
+const CardContainer = styled.div`
+  margin: 10px;
+`;
+const Card = styled.div`
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 10px;
+`;
 
 const TrelloCard = ({ index, id, text }) => {
   return (
     <Draggable draggableId={String(id)} index={index}>
       {provided => (
-        <div
+        <CardContainer
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
-          <div style={styles.card}>{text}</div>
-        </div>
+          <Card>{text}</Card>
+        </CardContainer>
       )}
     </Draggable>
   );
