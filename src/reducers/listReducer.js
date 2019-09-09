@@ -7,11 +7,11 @@ const initialState = [
     cards: [
       {
         id: `card-${0}`,
-        text: 'Card 1',
+        text: 'Every with in order to drag a <Draggable />.',
       },
       {
         id: `card-${1}`,
-        text: 'Card 2',
+        text: 'A drag handle can be the child of an interactive element.',
       },
     ],
   },
@@ -21,19 +21,19 @@ const initialState = [
     cards: [
       {
         id: `card-${2}`,
-        text: 'Card 1',
+        text: 'Proper semantics for accessibility are added to set.',
       },
       {
         id: `card-${3}`,
-        text: 'Card 2',
+        text: 'draggableId: A required DraggableId(string).',
       },
       {
         id: `card-${4}`,
-        text: 'Card 3',
+        text: 'A required number that matches the order of the list.',
       },
       {
         id: `card-${5}`,
-        text: 'Card 4',
+        text: 'The index needs to be unique within a consecutive.',
       },
     ],
   },
